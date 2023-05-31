@@ -27,6 +27,21 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Inserted into LinkedList",node.Data);
         }
+        public void AddReverse(int data)
+        {
+            Node newnode = new Node(data);
+            if(head==null)
+            {
+                head = newnode;
+            }
+            else
+            {
+                Node temp= head;
+                head= newnode;
+                head.Next = temp;
+            }
+            Console.WriteLine("{0} Inseted inti LinkedList", newnode.Data);
+        }
 
         public void Display()
         {
@@ -39,10 +54,16 @@ namespace LinkedList
             else
             {
                 Node temp= head;
+                while(temp!=null)
+                {
+                    Console.Write(" | "+temp.Data+" | ");
+                    temp=temp.Next;
+                }
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Linked List is  Not Empty");
                 Console.ResetColor();
             }
+            
         }
     }
 }
