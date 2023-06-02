@@ -97,7 +97,7 @@ namespace LinkedList
             return head;
         }
 
-        public void Delete(int data)
+        public void Delete()
         {
             Node tempnode = head;
             if (head != null)
@@ -105,6 +105,18 @@ namespace LinkedList
                 tempnode = head;
                 head = head.Next;
                 tempnode = null;
+            }
+        }
+
+        public void DeleteLast()
+        {
+            Node temp = head;
+            Node lastnode = temp.Next;
+            if(head!=null)
+            {
+                temp = temp.Next;
+                temp.Next = null;
+                lastnode = null;
             }
         }
         //}
