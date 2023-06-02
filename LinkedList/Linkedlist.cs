@@ -13,32 +13,32 @@ namespace LinkedList
         public void AddNode(int data)
         {
             Node node = new Node(data);
-            if(head == null)
+            if (head == null)
             {
                 head = node;
             }
             else
             {
-                Node temp= head;
-                while(temp.Next!= null)
+                Node temp = head;
+                while (temp.Next != null)
                 {
                     temp = temp.Next;
                 }
                 temp.Next = node;
             }
-            Console.WriteLine("{0} Inserted into LinkedList",node.Data);
+            Console.WriteLine("{0} Inserted into LinkedList", node.Data);
         }
         public void AddReverse(int data)
         {
             Node newnode = new Node(data);
-            if(head==null)
+            if (head == null)
             {
                 head = newnode;
             }
             else
             {
-                Node temp= head;
-                head= newnode;
+                Node temp = head;
+                head = newnode;
                 head.Next = temp;
             }
             Console.WriteLine("{0} Inseted inti LinkedList", newnode.Data);
@@ -62,6 +62,39 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Inserted into LinkedList", newnode.Data);
 
+        }
+
+        public Node Insert(int position, int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid position");
+            }
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.Next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.Next = this.head.Next;
+                        head.Next = node;
+                        break;
+                    }
+                    head = head.Next;
+                }
+                if (position != 1)
+                {
+                    Console.WriteLine("posiiton is out of range");
+                }
+            }
+            return head;
         }
 
 

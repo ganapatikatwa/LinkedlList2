@@ -8,7 +8,7 @@ namespace LinkedList
             while (true)
             {
                 Linkedlist linkedList = new Linkedlist();
-                Console.WriteLine("Enter the Choice\n1)Add Node\n2)Reverse Node\n3)Append");
+                Console.WriteLine("Enter the Choice\n1)Add Node\n2)Reverse Node\n3)Append\n4)Insert");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -29,6 +29,13 @@ namespace LinkedList
                         linkedList.Append(56);
                         linkedList.Append(30);
                         linkedList.Append(70);
+                        linkedList.Display();
+                        break;
+                    case 4:
+                        linkedList.AddNode(56);
+                        linkedList.AddNode(70);
+                        linkedList.Display();
+                        linkedList.Insert(2, 30);
                         linkedList.Display();
                         break;
                 }
