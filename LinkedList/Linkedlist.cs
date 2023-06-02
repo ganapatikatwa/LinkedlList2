@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace LinkedList
 {
@@ -42,6 +43,27 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Inseted inti LinkedList", newnode.Data);
         }
+
+        public void Append(int data)
+        {
+            Node newnode = new Node(data);
+            if (head == null)
+            {
+                head = newnode;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.Next != null)
+                {
+                    temp = temp.Next;
+                }
+                temp.Next = newnode;
+            }
+            Console.WriteLine("{0} Inserted into LinkedList", newnode.Data);
+
+        }
+
 
         public void Display()
         {
